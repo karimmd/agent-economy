@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+# Local reference baseline used during revision; not part of the artifact.
+results.submitted.bak/

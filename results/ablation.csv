@@ -1,0 +1,7 @@
+mechanism,label,verification,stake,reputation,routing,welfare,welfare_ci95,honesty,undetected_shortfall
+Mstar,Full mechanism,True,0.6,True,1.0,0.5493688749999999,0.0004556665357947423,0.9985974999999999,0.0005350000000000001
+no_stake,"Verification + reputation, no staking",True,0.0,True,1.0,0.4785658749999998,0.004880862326711941,0.8412575,0.058512499999999995
+stake_only,"Verification + staking, no reputation",True,0.6,False,1.0,0.5408481249999998,0.0017781874003110602,0.9796625,0.0075000000000000015
+no_reputation,"Verification only, open matching",True,0.0,False,1.0,0.3325397499999999,0.006993505059853094,0.5167550000000001,0.17800000000000002
+centralized,"Verification only, centralized routing",True,0.0,False,0.92,0.28153445,0.006061037718539353,0.5167550000000001,0.17800000000000002
+receipt_only,Receipt only,False,0.6,True,1.0,0.14999999999999994,0.0,0.0,1.0

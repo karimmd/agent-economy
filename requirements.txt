@@ -1,0 +1,4 @@
+# Tested configuration. numpy must be linked against OpenBLAS to reproduce the
+# published Receipt-Only latency quartile exactly; see README.md, "Environment".
+numpy==2.5.2
+matplotlib==3.11.0

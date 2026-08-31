@@ -1,0 +1,4 @@
+mechanism,x_key,x,seeds,status,median,q1,q3,honest_converged,dishonest_converged,not_converged,final_honesty_mean
+Mstar,cv,1.0,200,converged_to_honesty,2777.0,2497.75,3093.0,200,0,0,0.9880675000000001
+no_reputation,cv,1.0,200,converged_to_honesty,3468.5,3023.0,3990.25,200,0,0,0.9819074999999999
+receipt_only,cv,1.0,200,converged_to_dishonesty,3969.0,3309.0,4640.0,17,183,0,0.056815

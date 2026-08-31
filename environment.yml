@@ -1,0 +1,11 @@
+# Conda environment reproducing the published numbers exactly.
+# The libblas pin selects the OpenBLAS build of numpy; an MKL build shifts one
+# reported quartile by half a period (see README.md, "Environment").
+name: agent-economy
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - numpy=2.5.2
+  - matplotlib=3.11.0
+  - libblas=*=*openblas

@@ -1,0 +1,253 @@
+{
+  "ablation": {
+    "Mstar": {
+      "honesty": 0.9985974999999999,
+      "welfare": 0.5493688749999999
+    },
+    "centralized": {
+      "honesty": 0.5167550000000001,
+      "welfare": 0.28153445
+    },
+    "no_reputation": {
+      "honesty": 0.5167550000000001,
+      "welfare": 0.3325397499999999
+    },
+    "no_stake": {
+      "honesty": 0.8412575,
+      "welfare": 0.4785658749999998
+    },
+    "receipt_only": {
+      "honesty": 0.0,
+      "welfare": 0.14999999999999994
+    },
+    "stake_only": {
+      "honesty": 0.9796625,
+      "welfare": 0.5408481249999998
+    }
+  },
+  "exposure": {
+    "geometric": {
+      "0.0": 2.0,
+      "1.0": 1.450392472234439,
+      "2.0": 1.1857511752934669,
+      "3.0": 1.0720826484481465
+    },
+    "max_abs_geo_minus_bound": 6.661338147750939e-16,
+    "naive_mean": {
+      "0.0": 2.5,
+      "1.0": 1.5518191617571637,
+      "2.0": 1.2030029248549192,
+      "3.0": 1.0746806025517959
+    },
+    "spread": {
+      "geometric": {
+        "1.5": 1.224744871391589,
+        "2.0": 1.4142135623730951,
+        "3.0": 1.7320508075688772,
+        "4.0": 2.0,
+        "6.0": 2.449489742783178,
+        "8.0": 2.8284271247461903
+      },
+      "naive_mean": {
+        "1.5": 1.25,
+        "2.0": 1.5,
+        "3.0": 2.0,
+        "4.0": 2.5,
+        "6.0": 3.5,
+        "8.0": 4.5
+      }
+    }
+  },
+  "learning": {
+    "Mstar_peak": {
+      "cv": 0.5,
+      "honesty": 0.9822624999999999,
+      "welfare": 0.5670181250000298
+    },
+    "latency_cv_1": {
+      "Mstar": {
+        "dishonest_converged": 0,
+        "final_honesty_mean": 0.9880675000000001,
+        "honest_converged": 200,
+        "median": 2777.0,
+        "not_converged": 0,
+        "q1": 2497.75,
+        "q3": 3093.0,
+        "seeds": 200,
+        "status": "converged_to_honesty"
+      },
+      "no_reputation": {
+        "dishonest_converged": 0,
+        "final_honesty_mean": 0.9819074999999999,
+        "honest_converged": 200,
+        "median": 3468.5,
+        "not_converged": 0,
+        "q1": 3023.0,
+        "q3": 3990.25,
+        "seeds": 200,
+        "status": "converged_to_honesty"
+      },
+      "receipt_only": {
+        "dishonest_converged": 183,
+        "final_honesty_mean": 0.056815,
+        "honest_converged": 17,
+        "median": 3969.0,
+        "not_converged": 0,
+        "q1": 3309.0,
+        "q3": 4640.0,
+        "seeds": 200,
+        "status": "converged_to_dishonesty"
+      }
+    },
+    "receipt_only_at_peak_cv": 0.1751831249999902
+  },
+  "matching": {
+    "price_only@0.2": {
+      "delta_i": 0.0,
+      "honesty": 0.7618982382183501
+    },
+    "price_only@0.6": {
+      "delta_i": 0.0,
+      "honesty": 0.9759601362823607
+    },
+    "random@0.2": {
+      "delta_i": 0.0,
+      "honesty": 0.7618982382183501
+    },
+    "random@0.6": {
+      "delta_i": 0.0,
+      "honesty": 0.9759601362823607
+    },
+    "reputation_only@0.2": {
+      "delta_i": 0.0025199999999999997,
+      "honesty": 0.8061378243436076
+    },
+    "reputation_only@0.6": {
+      "delta_i": 0.0025199999999999997,
+      "honesty": 0.9833311570463095
+    },
+    "score@0.2": {
+      "delta_i": 0.0021149999999999993,
+      "honesty": 0.7993861910582861
+    },
+    "score@0.6": {
+      "delta_i": 0.0021149999999999993,
+      "honesty": 0.9822964612264835
+    }
+  },
+  "routing_penalty": {
+    "0.88": 0.2866285,
+    "0.92": 0.318041325,
+    "0.96": 0.35019834999999994,
+    "1.0": 0.38248462499999986
+  },
+  "setup": {
+    "T": 4000,
+    "bcl_seeds": 200,
+    "cv_grid_points": 13,
+    "learning_T": 8000,
+    "learning_seeds": 50,
+    "n": 50,
+    "seeds": 100,
+    "stake_grid_points": 16,
+    "sybil_grid_points": 9
+  },
+  "stake": {
+    "analytic_95_threshold": 1.0,
+    "honesty_at_0": 0.5029425000000001,
+    "honesty_at_0_2": 0.6581575,
+    "honesty_at_0_4": 0.7961849999999999
+  },
+  "sybil": {
+    "Mstar_frac_0": 0.5493688749999999,
+    "Mstar_frac_0_8": 0.5498256249999998,
+    "no_stake_frac_0": 0.4785658749999998,
+    "no_stake_frac_0_8": 0.361761625
+  },
+  "theory": {
+    "DRT_Mstar_cv_1": 4.0,
+    "DRT_receipt_only": "censored_infinite",
+    "DRT_rounds": {
+      "0.25": 14.0,
+      "0.5": 7.0,
+      "1": 4.0,
+      "2": 2.0,
+      "3": 2.0
+    },
+    "MHR_Mstar_cv_0": 1.0,
+    "MHR_Mstar_cv_3": 0.0,
+    "RCO_Mstar_cv_1_5": 0.15000000000000002,
+    "RCO_Mstar_cv_1_5_dispute": 0.0,
+    "RCO_Mstar_cv_1_5_verification": 0.15000000000000002,
+    "RCO_receipt_only_cv_1_5": 0.0,
+    "RCO_verification_only_cv_0_5_dispute": 0.027821
+  },
+  "thickness": {
+    "honesty_baseline_stake_0_6": 0.8909025000000003,
+    "honesty_monopoly_stake_0_6": 0.73938,
+    "honesty_monopoly_stake_1_0": 0.929425,
+    "required_stake_baseline": 0.8135986328125,
+    "required_stake_monopoly": 1.0985565185546875
+  },
+  "verification": {
+    "audit_d_at_3": 0.766875,
+    "audit_s_at_0": 4.0,
+    "audit_s_at_3": 1.3720922695345932,
+    "family_peaks": {
+      "exponential": {
+        "cv": 0.75,
+        "honesty": 0.9881949999999999,
+        "welfare": 0.55718775
+      },
+      "linear": {
+        "cv": 1.5,
+        "honesty": 0.9788849999999999,
+        "welfare": 0.5154982500000002
+      },
+      "logarithmic": {
+        "cv": 1.0,
+        "honesty": 0.9788849999999999,
+        "welfare": 0.5404982499999997
+      },
+      "power": {
+        "cv": 1.0,
+        "honesty": 0.9788849999999999,
+        "welfare": 0.5404982499999997
+      },
+      "threshold": {
+        "cv": 0.75,
+        "honesty": 1.0,
+        "welfare": 0.5625
+      }
+    },
+    "measured_peak": {
+      "cv": 0.5,
+      "honesty": 0.9742999999999999,
+      "welfare": 0.563435
+    },
+    "phi_max_participation": 0.07220216606498195,
+    "welfare_at_phi_0": 0.5493699999999998
+  },
+  "welfare": {
+    "Mstar_peak": {
+      "cv": 0.75,
+      "honesty": 0.9881850000000001,
+      "welfare": 0.5571832499999999
+    },
+    "at_cv_1_5": {
+      "Mstar": {
+        "honesty": 1.0,
+        "welfare": 0.5250000000000002
+      },
+      "centralized": {
+        "honesty": 0.6608375,
+        "welfare": 0.31272662500000004
+      },
+      "no_reputation": {
+        "honesty": 0.6608375,
+        "welfare": 0.372376875
+      }
+    },
+    "receipt_only_plateau": 0.14999999999999994
+  }
+}

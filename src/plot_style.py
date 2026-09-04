@@ -1,4 +1,4 @@
-"""House style for MDPI two-panel experiment figures."""
+"""House style for the two-panel experiment figures."""
 
 from __future__ import annotations
 

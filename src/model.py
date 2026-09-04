@@ -307,7 +307,7 @@ def param_variant(name: str, value: float, base: Params = BASE_PARAMS) -> Params
     return replace(base, **{name: value})
 
 
-# --- Market thickness (added for revision R1.1) -------------------------------
+# --- Market thickness ---------------------------------------------------------
 # Continuation value scales with how much a reputation loss costs an agent in
 # future matching. MATCH_FACTOR is that scale: 0.0 is a monopolist service agent
 # whose reputation loss forfeits no future business, larger values are thicker
@@ -327,7 +327,7 @@ def deterrence_at(stake: float, cv: float, match_factor: float, use_rep: bool = 
 def sweep_thickness(thicknesses: Iterable[float] = THICKNESS_GRID, stakes: Iterable[float] = THICKNESS_STAKES,
                     seeds: int = 100, cv: float = 0.5, n: int = 50, T: int = 4000,
                     p: Params = BASE_PARAMS) -> List[Dict[str, float | str]]:
-    """Honesty vs market thickness at several admission stakes (R1.1, thin markets)."""
+    """Honesty vs market thickness at several admission stakes (thin markets)."""
     rows: List[Dict[str, float | str]] = []
     for stake in stakes:
         for mf in thicknesses:
@@ -365,8 +365,8 @@ def required_stake(cv: float, match_factor: float, target: float = 0.95, p: Para
     return hi
 
 
-# --- Verification families and false positives (revision R1.6, R1.7) ----------
-# The submitted model uses d(cv)=1-exp(-K cv) and s(cv)=1+(s0-1)exp(-K cv).
+# --- Verification families and false positives --------------------------------
+# The base model uses d(cv)=1-exp(-K cv) and s(cv)=1+(s0-1)exp(-K cv).
 # These are one family: residual spread tracks the undetected mass, so that
 # s(cv) = 1 + (s0-1)*(1-d(cv)) holds identically. Alternative detection laws are
 # therefore obtained by replacing d and deriving s through the same coupling,
@@ -474,7 +474,7 @@ def simulate_run_fp(mech: str, cv: float, phi: float = 0.0, family: str = "expon
 
 def sweep_family(families: Iterable[str] = VERIFIER_FAMILIES, cvs: Iterable[float] = CV_GRID,
                  seeds: int = 100, n: int = 50, T: int = 4000, p: Params = BASE_PARAMS):
-    """Welfare vs verification budget under each detection family (R1.6)."""
+    """Welfare vs verification budget under each detection family."""
     rows = []
     for fam in families:
         for cv in cvs:
@@ -488,7 +488,7 @@ def sweep_family(families: Iterable[str] = VERIFIER_FAMILIES, cvs: Iterable[floa
 
 def sweep_false_positive(phis: Iterable[float] = PHI_GRID, cv: float = 1.0, seeds: int = 100,
                          n: int = 50, T: int = 4000, p: Params = BASE_PARAMS):
-    """Welfare, honesty, participation, and wrongful slashing vs false-positive rate (R1.7)."""
+    """Welfare, honesty, participation, and wrongful slashing vs false-positive rate."""
     rows = []
     for phi in phis:
         recs = [simulate_run_fp("Mstar", cv, float(phi), "exponential", n=n, T=T, seed=s, p=p) for s in range(seeds)]
@@ -532,7 +532,7 @@ def sweep_measured_verifier(measured_rows, seeds: int = 100, n: int = 50, T: int
     return rows
 
 
-# --- Matching-rule ablation (revision R1.8) -----------------------------------
+# --- Matching-rule ablation ---------------------------------------------------
 # The analytical runs select the transacting agent uniformly, so the matching rule
 # mu* is not exercised there. This path makes selection endogenous: agents post
 # heterogeneous prices, the mechanism selects under a stated rule, and reputation
@@ -544,7 +544,7 @@ MATCHING_RULES = ["score", "reputation_only", "price_only", "random"]
 def simulate_matching_run(rule: str = "score", cv: float = 1.0, n: int = 40, T: int = 8000,
                           seed: int = 0, warmup: float = 0.6, lam: float = 1.0, n_bid: int = 5,
                           stake: float | None = None, p: Params = BASE_PARAMS) -> Dict[str, float]:
-    """Q-learning agents under an explicit matching rule (R1.8).
+    """Q-learning agents under an explicit matching rule.
 
     Each period a random subset of `n_bid` agents is admissible for the task, reflecting
     task-specific capability, and the rule selects within that subset. Without a per-period
@@ -619,7 +619,7 @@ def sweep_matching(rules: Iterable[str] = MATCHING_RULES, cv: float = 1.0, seeds
 
 def ablation_table(cv: float = 1.0, seeds: int = 100, n: int = 50, T: int = 4000,
                    p: Params = BASE_PARAMS):
-    """One consolidated component ablation at a fixed verification budget (R1.8)."""
+    """One consolidated component ablation at a fixed verification budget."""
     variants = [
         ("Mstar", "Full mechanism"),
         ("no_stake", "Verification + reputation, no staking"),

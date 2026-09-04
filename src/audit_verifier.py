@@ -1,9 +1,8 @@
-"""An instantiated verifier class, measured rather than assumed (revision R2.6, R1.6, R1.7).
+"""Sampling-audit verifier, with its primitives measured rather than assumed.
 
-The submitted evaluation represents verification through the assumed residual-spread curve
-s(cv) of Assumption 2. This module replaces that assumption for one concrete verifier class:
-a sampling audit over an executable task. Service outputs are real Python implementations of
-a stated specification. A test bank of independent cases is generated from the reference
+This module instantiates one concrete verifier class in place of the assumed
+residual-spread curve s(cv) of Assumption 2: a sampling audit over an executable
+task. Service outputs are real Python implementations of a stated specification. A test bank of independent cases is generated from the reference
 implementation. The verifier draws k test cases without replacement, where k is what the
 verification budget buys, and reports:
 
@@ -11,7 +10,7 @@ verification budget buys, and reports:
   - the probability d that a genuine shortfall is flagged,
   - the probability phi that a compliant delivery is wrongly flagged.
 
-Nothing here is drawn from a fitted curve. Every number is produced by executing the
+No value here comes from a fitted curve. Every number is produced by executing the
 implementations against the tests.
 """
 

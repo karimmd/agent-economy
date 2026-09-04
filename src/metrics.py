@@ -1,4 +1,4 @@
-"""Theory-relevant metrics added for Prof. Qu's Suggestion 5."""
+"""Learning-convergence diagnostics and theory-side metrics over simulated runs."""
 
 from __future__ import annotations
 

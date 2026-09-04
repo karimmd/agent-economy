@@ -40,8 +40,8 @@ def exposure_spread_experiment(spreads=(1.5, 2.0, 3.0, 4.0, 6.0, 8.0)) -> List[D
 def exposure_error_experiment(epsilons=tuple(i * 0.05 for i in range(13)), cv: float = 1.0, p: Params = BASE_PARAMS) -> List[Dict[str, float | str]]:
     """Exact evaluation of the degraded bound under verifier false negatives.
 
-    Manuscript (Assumption, blue text for referee M3): with false-negative rate
-    epsilon, the effective spread is s_eps = s(cv) + eps * (s0 - s(cv)) and the
+    With false-negative rate epsilon, the effective spread is
+    s_eps = s(cv) + eps * (s0 - s(cv)) and the
     exposure bound degrades to sqrt(s_eps); geometric-mean pricing on the
     effective fiber attains it, the arithmetic rule exceeds it.
     """

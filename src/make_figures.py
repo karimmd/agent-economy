@@ -113,8 +113,8 @@ def plot_exposure_spread(rows):
 
 
 def plot_exposure_error(rows):
-    """Degraded frontier under verifier false negatives (referee M3, Assumption blue text):
-    the bound becomes sqrt(s_eps); geometric pricing still rides it."""
+    """Degraded frontier under verifier false negatives: the bound becomes
+    sqrt(s_eps); geometric pricing still rides it."""
     fig, ax = panel()
     geometric = sorted((r for r in rows if r["rule"] == "geometric"), key=lambda r: float(r["epsilon"]))
     arithmetic = sorted((r for r in rows if r["rule"] == "naive_mean"), key=lambda r: float(r["epsilon"]))
@@ -158,7 +158,7 @@ def plot_sybil(rows):
 
 
 def plot_thickness(rows):
-    """Honesty vs market thickness at several admission stakes (R1.1)."""
+    """Honesty vs market thickness at several admission stakes."""
     fig, ax = panel()
     shades = ["#B8CBE0", "#7FA6C9", "#3F6F9F", "#1F3F63"]
     stakes = sorted({float(r["stake"]) for r in rows})
@@ -181,7 +181,7 @@ def plot_thickness(rows):
 
 
 def plot_required_stake(rows):
-    """Admission stake needed to hold the 95% honesty target as the market thins (R1.1)."""
+    """Admission stake needed to hold the 95% honesty target as the market thins."""
     fig, ax = panel()
     sub = sorted(rows, key=lambda r: float(r["match_factor"]))
     xs = [float(r["match_factor"]) for r in sub]
@@ -199,7 +199,7 @@ def plot_required_stake(rows):
 
 
 def plot_measured_verifier(audit, families):
-    """Measured audit (s, d) against the assumed curves of Assumption 2 (R2.6)."""
+    """Measured audit (s, d) against the assumed curves of Assumption 2."""
     import math
     fig, ax = panel()
     cvs = [float(r["cv"]) for r in audit]
@@ -230,7 +230,7 @@ def plot_measured_verifier(audit, families):
 
 
 def plot_false_positive(rows):
-    """Welfare and compliant-agent payoff against the false-positive rate (R1.7)."""
+    """Welfare and compliant-agent payoff against the false-positive rate."""
     fig, ax = panel()
     xs = [float(r["x"]) for r in rows]
     ax.plot(xs, [float(r["welfare"]) for r in rows], color="#1F3F63", marker="o", linewidth=2.6,
@@ -255,7 +255,7 @@ def plot_false_positive(rows):
 
 
 def plot_families(rows):
-    """Welfare vs verification budget under alternative detection laws (R1.6)."""
+    """Welfare vs verification budget under alternative detection laws."""
     fig, ax = panel(figsize=(5.4, 3.5))
     styles = {"exponential": ("#1F3F63", "o"), "linear": ("#7FA6C9", "s"),
               "logarithmic": ("#B03030", "^"), "power": ("#4C8C57", "D"),
